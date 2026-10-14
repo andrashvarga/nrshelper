@@ -3,6 +3,9 @@ on: [workflow_dispatch, push]
 jobs:
   build:
     runs-on: macos-14
+    defaults:
+      run:
+        working-directory: noros-ios-project
     steps:
       - uses: actions/checkout@v4
       - name: Install XcodeGen
@@ -22,4 +25,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: NorosHelper-unsigned-ipa
-          path: out/NorosHelper-unsigned.ipa
+          path: noros-ios-project/out/NorosHelper-unsigned.ipa

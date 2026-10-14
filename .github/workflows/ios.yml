@@ -8,6 +8,10 @@ jobs:
         working-directory: noros-ios-project
     steps:
       - uses: actions/checkout@v4
+      - name: Apply update folder
+        run: |
+          if [ -d noros-ios-update ]; then cp -R noros-ios-update/. .; fi
+          grep -c NOROS_NATIVE_IOS Resources/web/index.html || true
       - name: Select newest Xcode
         run: |
           X=$(ls -d /Applications/Xcode_*.app | sort -V | tail -1)

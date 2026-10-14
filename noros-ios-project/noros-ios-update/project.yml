@@ -1,0 +1,41 @@
+name: NorosHelper
+options:
+  bundleIdPrefix: com.noros
+  deploymentTarget:
+    iOS: "15.0"
+targets:
+  NorosHelper:
+    type: application
+    platform: iOS
+    sources:
+      - Sources
+      - path: Resources/Assets.xcassets
+      - path: Resources/web
+        type: folder
+        buildPhase: resources
+    info:
+      path: Info.plist
+      properties:
+        CFBundleDisplayName: Помощник
+        NSFaceIDUsageDescription: Вход в приложение по Face ID
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        ITSAppUsesNonExemptEncryption: false
+        LSApplicationQueriesSchemes: [tg]
+        UIViewControllerBasedStatusBarAppearance: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.noros.helper
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES: "IcDark IcRio"
+        SWIFT_VERSION: "5.0"
+        DEVELOPMENT_TEAM: ""
+schemes:
+  NorosHelper:
+    build:
+      targets:
+        NorosHelper: all
